@@ -9,12 +9,16 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
   description:
-    "Driftmark builds AI agents that automate critical operations across Africa — from cybersecurity and logistics to education and tourism. Purpose-built for enterprises and governments ready to lead with intelligence.",
+    "Driftmark is a data and AI-enabled software engineering services partner based in Dar es Salaam, Tanzania — serving companies across all 54 African countries with AI, data & analytics, cloud, software engineering, experience design, and cybersecurity.",
   keywords: [
     "AI",
     "Automation",
     "Africa",
     "Tanzania",
+    "Dar es Salaam",
+    "Software Engineering",
+    "Data & Analytics",
+    "Cloud",
     "Enterprise Software",
     "Cybersecurity",
     "Logistics",
@@ -28,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
     description:
-      "Driftmark builds AI agents that automate critical operations across Africa — from cybersecurity and logistics to education and tourism.",
+      "A data and AI-enabled software engineering services partner — serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
     type: "website",
     siteName: "Driftmark Technologies",
   },
@@ -36,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
     description:
-      "Driftmark builds AI agents that automate critical operations across Africa — from cybersecurity and logistics to education and tourism.",
+      "A data and AI-enabled software engineering services partner — serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
   },
 };
 
