@@ -30,11 +30,14 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const whatsappMessage =
+  "Hey, I am coming from the Driftmark website. I am interested in your services.";
+
 const contact = {
   email: "hello@driftmark.co.tz",
   phone: "+255 682 152 148",
   phoneHref: "tel:+255682152148",
-  whatsappHref: "https://wa.me/255682152148",
+  whatsappHref: `https://wa.me/255682152148?text=${encodeURIComponent(whatsappMessage)}`,
   location:
     "Rose Garden Road, Dar Village Office Park, Mikocheni, Dar es Salaam, Tanzania",
 };
@@ -208,6 +211,28 @@ const testimonials = [
       "Driftmark's engineering team delivered beyond expectations. Their AI solutions seamlessly integrated with our existing systems and unlocked new capabilities.",
   },
 ];
+
+/* ─── Floating WhatsApp Button ────────────────────────────────────── */
+
+function FloatingWhatsApp() {
+  return (
+    <a
+      href={contact.whatsappHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+      className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-[60] flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-white border border-border shadow-lg transition-transform hover:scale-110"
+    >
+      <Image
+        src="/whatsapp-floating-button.png"
+        alt="WhatsApp"
+        width={64}
+        height={64}
+        className="h-10 w-10 md:h-12 md:w-12 object-contain"
+      />
+    </a>
+  );
+}
 
 /* ─── Navbar ──────────────────────────────────────────────────────── */
 
@@ -889,6 +914,7 @@ export default function Home() {
       <IndustriesSection />
       <ClientsSection />
       <Footer />
+      <FloatingWhatsApp />
     </main>
   );
 }
