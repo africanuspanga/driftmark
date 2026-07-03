@@ -206,9 +206,18 @@ export default function StartQuiz() {
   const [phone, setPhone] = useState("");
 
   const t = lang ? content[lang] : null;
-  const totalSteps = 7; // 6 questions + contact
+  // The "current website" question only applies when they picked Website.
+  const activeQuestions = t
+    ? t.questions.filter(
+        (q) => q.key !== "currentWebsite" || answers.need === "Website"
+      )
+    : [];
+  const totalSteps = activeQuestions.length + 1; // questions + contact
   const isContact = step === totalSteps;
-  const current = t && step >= 1 && step <= 6 ? t.questions[step - 1] : null;
+  const current =
+    step >= 1 && step <= activeQuestions.length
+      ? activeQuestions[step - 1]
+      : null;
   const progress = Math.round((step / totalSteps) * 100);
   const canSend = company.trim().length > 0 && phone.trim().length >= 9;
 
@@ -218,7 +227,14 @@ export default function StartQuiz() {
   }
 
   function selectOption(key: string, option: string) {
-    setAnswers((prev) => ({ ...prev, [key]: option }));
+    setAnswers((prev) => {
+      const next = { ...prev, [key]: option };
+      // Changing away from Website drops the no-longer-asked answer.
+      if (key === "need" && option !== "Website") {
+        delete next.currentWebsite;
+      }
+      return next;
+    });
     setStep((prev) => prev + 1);
   }
 
@@ -237,7 +253,7 @@ export default function StartQuiz() {
     if (!t) return "#";
     const lines = [
       t.waIntro,
-      ...t.questions.map((q) => `• ${q.label}: ${answers[q.key] ?? "-"}`),
+      ...activeQuestions.map((q) => `• ${q.label}: ${answers[q.key] ?? "-"}`),
       `${t.companyMsgLabel}: ${company.trim()}`,
       `${t.phoneMsgLabel}: ${phone.trim()}`,
     ];
