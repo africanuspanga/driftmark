@@ -7,10 +7,6 @@ import {
   Search,
   X,
   ChevronDown,
-  Bot,
-  Cpu,
-  Shield,
-  Zap,
   ArrowUpRight,
   ArrowRight,
   Phone,
@@ -152,31 +148,10 @@ const products = [
   },
 ];
 
-const capabilities = [
-  {
-    icon: Bot,
-    title: "AI Agent Development",
-    description:
-      "We design, build, and deploy intelligent AI agents that automate complex business processes, from data extraction to decision support.",
-  },
-  {
-    icon: Cpu,
-    title: "Enterprise Automation",
-    description:
-      "End-to-end automation solutions that eliminate manual workflows, reduce errors, and accelerate operations across your entire organization.",
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity Operations",
-    description:
-      "Proactive penetration testing, threat analysis, and infrastructure hardening to protect critical systems and sensitive data.",
-  },
-  {
-    icon: Zap,
-    title: "Digital Transformation",
-    description:
-      "Migrating legacy paper-based systems to intelligent digital platforms, unlocking the power of data for smarter decisions.",
-  },
+const stats = [
+  { value: "100+", label: "Websites & systems delivered" },
+  { value: "54", label: "African countries served" },
+  { value: "6", label: "Software products of our own" },
 ];
 
 const testimonials = [
@@ -534,15 +509,8 @@ function SoftwareSection() {
 
       <div className="flex flex-col">
         {products.map((product, index) => {
-          const isLongName = product.name.length > 8;
           const nameEl = (
-            <h3
-              className={`font-light tracking-tight text-foreground leading-none transition-opacity group-hover:opacity-70 ${
-                isLongName
-                  ? "text-5xl lg:text-7xl xl:text-8xl text-right"
-                  : "text-8xl lg:text-9xl xl:text-[10rem]"
-              }`}
-            >
+            <h3 className="text-7xl lg:text-9xl xl:text-[10rem] font-light tracking-tight text-foreground leading-none text-right transition-opacity group-hover:opacity-70">
               {product.name}
             </h3>
           );
@@ -557,11 +525,7 @@ function SoftwareSection() {
               {/* Mobile Layout */}
               <div className="flex md:hidden flex-col gap-4">
                 <div className="flex items-start justify-between gap-4">
-                  <h3
-                    className={`font-light tracking-tight text-foreground leading-none ${
-                      isLongName ? "text-4xl" : "text-5xl"
-                    }`}
-                  >
+                  <h3 className="text-5xl font-light tracking-tight text-foreground leading-[0.95]">
                     {product.name}
                   </h3>
                   <span className="text-sm text-muted-foreground mt-2 shrink-0">
@@ -634,71 +598,31 @@ function SoftwareSection() {
   );
 }
 
-/* ─── What We Do ──────────────────────────────────────────────────── */
-
-function WhatWeDo() {
-  return (
-    <section
-      id="what-we-do"
-      className="bg-foreground text-background px-6 md:px-12 lg:px-20 py-20 md:py-32"
-    >
-      <div className="max-w-7xl mx-auto">
-        <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-6">
-          What We Do
-        </p>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-light leading-tight max-w-3xl mb-20 md:mb-28 text-balance">
-          Building AI Agents to Automate Almost Everything
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-background/10">
-          {capabilities.map((cap) => (
-            <div
-              key={cap.title}
-              className="bg-foreground p-8 md:p-12 flex flex-col gap-6"
-            >
-              <cap.icon
-                className="h-6 w-6 text-background/60"
-                strokeWidth={1.5}
-              />
-              <h3 className="text-xl md:text-2xl font-medium text-background">
-                {cap.title}
-              </h3>
-              <p className="text-base text-background/70 leading-relaxed">
-                {cap.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── Industries ──────────────────────────────────────────────────── */
 
 function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="bg-background px-6 md:px-12 lg:px-20 py-20 md:py-32 border-b border-border"
+      className="bg-foreground text-background px-6 md:px-12 lg:px-20 py-20 md:py-32"
     >
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-14 md:mb-20">
+        <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-14 md:mb-20">
           Industries
         </p>
-        <p className="text-2xl sm:text-3xl md:text-5xl font-light leading-snug md:leading-normal text-foreground">
+        <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light leading-[1.8] md:leading-[1.7]">
           {industries.map((industry, index) => (
             <span key={industry}>
-              <span className="whitespace-nowrap">{industry}</span>
+              <span className="whitespace-nowrap transition-colors hover:text-background/60">
+                {industry}
+              </span>
               {index < industries.length - 1 && (
-                <span className="text-muted-foreground/50 mx-3 md:mx-5">
-                  /
-                </span>
+                <span className="text-background/30 mx-2.5 md:mx-5">/</span>
               )}
             </span>
           ))}
         </p>
-        <p className="mt-14 md:mt-20 text-base md:text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-14 md:mt-20 text-base md:text-lg text-background/60 leading-relaxed max-w-2xl mx-auto">
           Wherever your industry operates in Africa, we are ready — serving
           companies in all 54 countries from our base in Dar es Salaam,
           Tanzania.
@@ -721,37 +645,60 @@ function ClientsSection() {
           Trusted By
         </p>
         <h2 className="text-3xl md:text-5xl font-light text-foreground mb-16 md:mb-24 text-balance">
-          Organizations that work with Driftmark
+          Organizations that trust Driftmark to deliver
         </h2>
 
-        <div className="flex flex-wrap gap-8 md:gap-16 items-center mb-20 md:mb-28 border-b border-border pb-12">
-          {testimonials.map((t) => (
-            <span
-              key={t.company}
-              className="text-lg md:text-xl font-medium text-foreground tracking-tight"
+        {/* Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border mb-16 md:mb-24">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="bg-background p-8 md:p-10 flex flex-col gap-3"
             >
-              {t.company}
-            </span>
+              <span className="text-5xl md:text-6xl font-light tracking-tight text-foreground">
+                {stat.value}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {stat.label}
+              </span>
+            </div>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((t, index) => (
+        {/* Client name tiles */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border border border-border mb-16 md:mb-24">
+          {testimonials.map((t) => (
             <div
               key={t.company}
-              className={`flex flex-col gap-6 ${
-                index < testimonials.length - 1
-                  ? "pb-8 border-b border-border md:border-b-0 md:pb-0"
-                  : ""
-              }`}
+              className="bg-background flex items-center justify-center px-4 py-8 md:py-10 transition-colors hover:bg-muted"
             >
-              <p className="text-base text-foreground/80 leading-relaxed">
-                {`"${t.quote}"`}
-              </p>
-              <span className="text-sm font-medium text-foreground tracking-wide uppercase">
+              <span className="text-base md:text-lg font-medium tracking-tight text-foreground text-center">
                 {t.company}
               </span>
             </div>
+          ))}
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((t) => (
+            <figure
+              key={t.company}
+              className="border border-border p-8 md:p-10 flex flex-col gap-6 transition-colors hover:border-foreground"
+            >
+              <span
+                className="text-6xl font-light leading-none text-foreground/15 select-none"
+                aria-hidden="true"
+              >
+                {"“"}
+              </span>
+              <blockquote className="flex-1 text-base text-foreground/80 leading-relaxed">
+                {t.quote}
+              </blockquote>
+              <figcaption className="text-sm font-medium text-foreground tracking-wide uppercase border-t border-border pt-6">
+                {t.company}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
@@ -904,13 +851,12 @@ function Footer() {
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-clip">
       <Navbar />
       <Hero />
       <AboutSection />
       <ServicesSection />
       <SoftwareSection />
-      <WhatWeDo />
       <IndustriesSection />
       <ClientsSection />
       <Footer />
