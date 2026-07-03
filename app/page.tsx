@@ -621,7 +621,7 @@ function SoftwareSection() {
             <h3
               className={`font-light tracking-tight text-foreground leading-none whitespace-nowrap transition-opacity group-hover:opacity-70 ${
                 isLongName
-                  ? "text-4xl lg:text-6xl xl:text-7xl"
+                  ? "text-4xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
                   : "text-8xl lg:text-9xl xl:text-[10rem]"
               }`}
             >
@@ -641,7 +641,7 @@ function SoftwareSection() {
                 <div className="flex items-start justify-between gap-4">
                   <h3
                     className={`font-light tracking-tight text-foreground leading-none whitespace-nowrap ${
-                      isLongName ? "text-[2.1rem]" : "text-5xl"
+                      isLongName ? "text-4xl" : "text-5xl"
                     }`}
                   >
                     {product.name}
