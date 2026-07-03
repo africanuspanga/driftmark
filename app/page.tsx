@@ -49,13 +49,13 @@ const differentiators = [
     number: "2",
     title: "Pan-African Delivery",
     description:
-      "Headquartered in Dar es Salaam, Tanzania, we work with companies across all 54 African countries — delivering reliable engineering wherever you operate.",
+      "Headquartered in Dar es Salaam, Tanzania, we work with companies across all 54 African countries, delivering reliable engineering wherever you operate.",
   },
   {
     number: "3",
     title: "Products & Services, Together",
     description:
-      "We don't just deliver services. We build and run our own software products, so we engineer for our clients the way owners do — not vendors.",
+      "We don't just deliver services. We build and run our own software products, so we engineer for our clients the way owners do, not vendors.",
   },
 ];
 
@@ -70,7 +70,7 @@ const services = [
     title: "Data & Analytics",
     image: "/images/data-analytics.png",
     description:
-      "From data engineering to dashboards — we turn raw data into decisions your teams can act on.",
+      "From data engineering to dashboards, we turn raw data into decisions your teams can act on.",
   },
   {
     title: "Cloud",
@@ -82,19 +82,13 @@ const services = [
     title: "Software Engineering",
     image: "/images/software-engineering.jpg",
     description:
-      "End-to-end product engineering — web, mobile, and enterprise systems built to last.",
-  },
-  {
-    title: "Experience Design",
-    image: "/images/design.jpg",
-    description:
-      "Research-driven UX and clean, minimal interfaces that make complex systems feel simple.",
+      "End-to-end product engineering, web, mobile, and enterprise systems built to last.",
   },
   {
     title: "Cybersecurity",
-    image: null,
+    image: "/images/design.jpg",
     description:
-      "Penetration testing, threat analysis, and infrastructure hardening — securing your systems at every layer.",
+      "Penetration testing, threat analysis, and infrastructure hardening, securing your systems at every layer.",
   },
 ];
 
@@ -140,7 +134,7 @@ const products = [
       "One-stop software for every tourism operation. From booking engines to website builders, managing the full lifecycle of a tourism company.",
   },
   {
-    name: "CV CHAP CHAP",
+    name: "CV Chap Chap",
     number: "/0.6",
     description:
       "Build a professional, job-winning CV in minutes. Helping job seekers across Africa present their best selves and land the roles they deserve.",
@@ -187,6 +181,114 @@ const testimonials = [
   },
 ];
 
+type SearchItem = {
+  title: string;
+  category: string;
+  href: string;
+  keywords?: string;
+  external?: boolean;
+};
+
+const searchIndex: SearchItem[] = [
+  {
+    title: "About Us",
+    category: "Section",
+    href: "#about",
+    keywords: "company partner data ai africa differentiators who we are",
+  },
+  {
+    title: "Contact Us",
+    category: "Section",
+    href: "#contact",
+    keywords: "email phone whatsapp location message form talk quote",
+  },
+  ...services.map((s) => ({
+    title: s.title,
+    category: "Service",
+    href: "#services",
+    keywords: s.description,
+  })),
+  ...products.map((p) => ({
+    title: p.name,
+    category: "Software",
+    href: p.href ?? "#software",
+    keywords: p.description,
+    external: Boolean(p.href),
+  })),
+  ...industries.map((i) => ({
+    title: i,
+    category: "Industry",
+    href: "#industries",
+  })),
+];
+
+/* ─── Search Overlay ──────────────────────────────────────────────── */
+
+function SearchOverlay({ onClose }: { onClose: () => void }) {
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const results = q
+    ? searchIndex.filter((item) =>
+        `${item.title} ${item.keywords ?? ""} ${item.category}`
+          .toLowerCase()
+          .includes(q)
+      )
+    : searchIndex;
+
+  return (
+    <div className="fixed inset-0 z-[110] bg-background flex flex-col">
+      <div className="flex items-center gap-4 px-6 py-5 border-b border-border">
+        <Search className="h-5 w-5 text-muted-foreground shrink-0" />
+        <input
+          autoFocus
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => e.key === "Escape" && onClose()}
+          placeholder="Search services, software, industries..."
+          className="flex-1 bg-transparent text-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
+        />
+        <button
+          type="button"
+          onClick={onClose}
+          className="flex h-10 w-10 items-center justify-center border border-border text-foreground"
+          aria-label="Close search"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+      <div className="flex-1 overflow-y-auto px-6 py-4">
+        <div className="max-w-3xl mx-auto w-full flex flex-col">
+          {results.length === 0 ? (
+            <p className="text-muted-foreground py-12 text-center">
+              {`No results for "${query}"`}
+            </p>
+          ) : (
+            results.map((item) => (
+              <a
+                key={`${item.category}-${item.title}`}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                onClick={onClose}
+                className="group flex items-center justify-between gap-4 py-4 border-b border-border"
+              >
+                <span className="flex items-center gap-3 text-lg font-light text-foreground transition-opacity group-hover:opacity-60">
+                  {item.title}
+                  {item.external && <ArrowUpRight className="h-4 w-4" />}
+                </span>
+                <span className="text-xs uppercase tracking-widest text-muted-foreground shrink-0">
+                  {item.category}
+                </span>
+              </a>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── Floating WhatsApp Button ────────────────────────────────────── */
 
 function FloatingWhatsApp() {
@@ -213,6 +315,7 @@ function FloatingWhatsApp() {
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <>
@@ -247,6 +350,7 @@ function Navbar() {
           </a>
           <button
             type="button"
+            onClick={() => setSearchOpen(true)}
             className="flex h-10 w-10 items-center justify-center border border-border text-foreground transition-colors hover:bg-muted"
             aria-label="Search"
           >
@@ -276,6 +380,7 @@ function Navbar() {
           </button>
           <button
             type="button"
+            onClick={() => setSearchOpen(true)}
             className="flex h-10 w-10 items-center justify-center border border-border text-foreground"
             aria-label="Search"
           >
@@ -346,6 +451,8 @@ function Navbar() {
           </div>
         </div>
       )}
+
+      {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
     </>
   );
 }
@@ -372,7 +479,7 @@ function Hero() {
           for Every Decision
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/80 leading-relaxed">
-          A data and AI-enabled software engineering services partner — working
+          A data and AI-enabled software engineering services partner, working
           with companies across all 54 African countries, from Dar es Salaam,
           Tanzania.
         </p>
@@ -411,7 +518,7 @@ function AboutSection() {
           Driftmark Technologies blends deep domain expertise with data, AI,
           and modern engineering to solve industry-specific challenges and
           deliver measurable outcomes. We partner with enterprises,
-          institutions, and governments across all 54 African countries —
+          institutions, and governments across all 54 African countries,
           designing, building, and operating the systems that power their most
           critical decisions. And because we build and run our own software
           products too, we bring an owner&apos;s mindset to every engagement.
@@ -455,7 +562,7 @@ function ServicesSection() {
           Services
         </p>
         <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-3xl mb-16 md:mb-24 text-balance">
-          Everything a modern technology partner should do — under one roof
+          Everything a modern technology partner should do, under one roof
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -503,14 +610,21 @@ function SoftwareSection() {
         Our Software
       </h2>
       <p className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-2xl mb-16 md:mb-24">
-        Beyond our services, we build and operate our own software products —
+        Beyond our services, we build and operate our own software products,
         proof that we engineer what we recommend.
       </p>
 
       <div className="flex flex-col">
         {products.map((product, index) => {
+          const isLongName = product.name.length > 8;
           const nameEl = (
-            <h3 className="text-7xl lg:text-9xl xl:text-[10rem] font-light tracking-tight text-foreground leading-none text-right transition-opacity group-hover:opacity-70">
+            <h3
+              className={`font-light tracking-tight text-foreground leading-none whitespace-nowrap transition-opacity group-hover:opacity-70 ${
+                isLongName
+                  ? "text-4xl lg:text-6xl xl:text-7xl"
+                  : "text-8xl lg:text-9xl xl:text-[10rem]"
+              }`}
+            >
               {product.name}
             </h3>
           );
@@ -525,7 +639,11 @@ function SoftwareSection() {
               {/* Mobile Layout */}
               <div className="flex md:hidden flex-col gap-4">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-5xl font-light tracking-tight text-foreground leading-[0.95]">
+                  <h3
+                    className={`font-light tracking-tight text-foreground leading-none whitespace-nowrap ${
+                      isLongName ? "text-[2.1rem]" : "text-5xl"
+                    }`}
+                  >
                     {product.name}
                   </h3>
                   <span className="text-sm text-muted-foreground mt-2 shrink-0">
@@ -606,27 +724,40 @@ function IndustriesSection() {
       id="industries"
       className="bg-foreground text-background px-6 md:px-12 lg:px-20 py-20 md:py-32"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-14 md:mb-20">
-          Industries
-        </p>
-        <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light leading-[1.8] md:leading-[1.7]">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-20">
+          <div>
+            <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-6">
+              Industries
+            </p>
+            <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-2xl text-balance">
+              Domain depth across the sectors driving Africa forward
+            </h2>
+          </div>
+          <p className="text-base text-background/60 leading-relaxed max-w-xs md:text-right shrink-0">
+            Serving companies in all 54 African countries from Dar es Salaam,
+            Tanzania.
+          </p>
+        </div>
+
+        <div className="border-t border-background/15">
           {industries.map((industry, index) => (
-            <span key={industry}>
-              <span className="whitespace-nowrap transition-colors hover:text-background/60">
-                {industry}
-              </span>
-              {index < industries.length - 1 && (
-                <span className="text-background/30 mx-2.5 md:mx-5">/</span>
-              )}
-            </span>
+            <div
+              key={industry}
+              className="group flex items-center justify-between gap-6 border-b border-background/15 py-6 md:py-9 transition-colors hover:bg-background/5"
+            >
+              <div className="flex items-baseline gap-5 md:gap-10 min-w-0">
+                <span className="text-sm text-background/40 tabular-nums shrink-0">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-2xl sm:text-3xl md:text-5xl font-light leading-tight transition-transform duration-300 group-hover:translate-x-2 md:group-hover:translate-x-4">
+                  {industry}
+                </h3>
+              </div>
+              <ArrowRight className="h-5 w-5 md:h-7 md:w-7 text-background/30 transition-colors group-hover:text-background shrink-0" />
+            </div>
           ))}
-        </p>
-        <p className="mt-14 md:mt-20 text-base md:text-lg text-background/60 leading-relaxed max-w-2xl mx-auto">
-          Wherever your industry operates in Africa, we are ready — serving
-          companies in all 54 countries from our base in Dar es Salaam,
-          Tanzania.
-        </p>
+        </div>
       </div>
     </section>
   );
@@ -706,43 +837,199 @@ function ClientsSection() {
   );
 }
 
-/* ─── Footer ──────────────────────────────────────────────────────── */
+/* ─── Contact Section ─────────────────────────────────────────────── */
 
-function Footer() {
+function ContactSection() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  const canSend = name.trim().length > 0 && message.trim().length > 0;
+
+  const lines = [
+    `Hello Driftmark! My name is ${name.trim()}.`,
+    email.trim() ? `Email: ${email.trim()}` : "",
+    phone.trim() ? `Phone: ${phone.trim()}` : "",
+    message.trim(),
+  ].filter(Boolean);
+  const formWhatsappHref = `https://wa.me/255682152148?text=${encodeURIComponent(lines.join("\n"))}`;
+
+  const inputClasses =
+    "h-14 w-full border border-background/25 bg-transparent px-5 text-base text-background placeholder:text-background/40 focus:border-background focus:outline-none";
+
   return (
-    <footer
+    <section
       id="contact"
       className="bg-foreground text-background px-6 md:px-12 lg:px-20 py-20 md:py-32"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-20 md:mb-28">
-          <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-6">
-            Get Started
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24">
+        <div className="flex flex-col gap-8">
+          <div>
+            <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-6">
+              Contact Us
+            </p>
+            <h2 className="text-3xl md:text-5xl font-light leading-tight text-balance">
+              Tell us about your project
+            </h2>
+          </div>
+          <p className="text-base md:text-lg text-background/60 leading-relaxed max-w-md">
+            Share a few details and we will get back to you the same day.
+            Prefer talking directly? Reach us on any channel below.
           </p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light leading-tight max-w-3xl mb-10 text-balance">
-            Ready to automate your next decision?
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex items-center justify-center gap-2 border border-background/30 px-8 py-4 text-sm font-medium text-background transition-colors hover:bg-background hover:text-foreground"
-            >
-              Email Us
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+          <div className="flex flex-col gap-4 mt-2">
             <a
               href={contact.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border border-background/30 px-8 py-4 text-sm font-medium text-background transition-colors hover:bg-background hover:text-foreground"
+              className="flex items-center gap-3 text-sm text-background/80 hover:text-background transition-colors"
             >
-              Chat on WhatsApp
-              <MessageCircle className="h-4 w-4" />
+              <MessageCircle className="h-4 w-4 shrink-0" />
+              WhatsApp: {contact.phone}
             </a>
+            <a
+              href={contact.phoneHref}
+              className="flex items-center gap-3 text-sm text-background/80 hover:text-background transition-colors"
+            >
+              <Phone className="h-4 w-4 shrink-0" />
+              {contact.phone}
+            </a>
+            <a
+              href={`mailto:${contact.email}`}
+              className="flex items-center gap-3 text-sm text-background/80 hover:text-background transition-colors"
+            >
+              <Mail className="h-4 w-4 shrink-0" />
+              {contact.email}
+            </a>
+            <p className="flex items-start gap-3 text-sm text-background/80">
+              <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+              <span>{contact.location}</span>
+            </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-background/10 pt-12">
+        <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <label className="flex flex-col gap-2">
+              <span className="text-sm text-background/60">Your name *</span>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="e.g. Juma"
+                autoComplete="name"
+                className={inputClasses}
+              />
+            </label>
+            <label className="flex flex-col gap-2">
+              <span className="text-sm text-background/60">Phone</span>
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="e.g. 0712 345 678"
+                autoComplete="tel"
+                inputMode="tel"
+                className={inputClasses}
+              />
+            </label>
+          </div>
+          <label className="flex flex-col gap-2">
+            <span className="text-sm text-background/60">Email</span>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="e.g. juma@company.co.tz"
+              autoComplete="email"
+              className={inputClasses}
+            />
+          </label>
+          <label className="flex flex-col gap-2">
+            <span className="text-sm text-background/60">
+              Your message *
+            </span>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Tell us what you want to build..."
+              rows={5}
+              className="w-full border border-background/25 bg-transparent px-5 py-4 text-base text-background placeholder:text-background/40 focus:border-background focus:outline-none resize-none"
+            />
+          </label>
+          {canSend ? (
+            <a
+              href={formWhatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-14 items-center justify-center gap-2 bg-background text-foreground text-base font-medium transition-opacity hover:opacity-90"
+            >
+              Send via WhatsApp
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="flex h-14 items-center justify-center gap-2 bg-background text-foreground text-base font-medium opacity-40 cursor-not-allowed"
+            >
+              Send via WhatsApp
+              <ArrowUpRight className="h-4 w-4" />
+            </button>
+          )}
+          <p className="text-sm text-background/50 text-center">
+            Opens WhatsApp with your message ready to send.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── CTA Section ─────────────────────────────────────────────────── */
+
+function CTASection() {
+  return (
+    <section className="bg-background px-6 md:px-12 lg:px-20 py-20 md:py-28">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+        <div>
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
+            Get Started
+          </p>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight text-foreground max-w-2xl text-balance">
+            Ready to automate your next decision?
+          </h2>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+          <a
+            href={`mailto:${contact.email}`}
+            className="inline-flex items-center justify-center gap-2 bg-foreground px-8 py-4 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          >
+            Email Us
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+          <a
+            href={contact.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 border border-foreground px-8 py-4 text-sm font-medium text-foreground transition-colors hover:bg-foreground hover:text-background"
+          >
+            Chat on WhatsApp
+            <MessageCircle className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Footer ──────────────────────────────────────────────────────── */
+
+function Footer() {
+  return (
+    <footer className="bg-foreground text-background px-6 md:px-12 lg:px-20 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Image
               src="/driftmark-logo.png"
@@ -752,7 +1039,7 @@ function Footer() {
               className="h-12 w-auto brightness-0 invert mb-6"
             />
             <p className="text-sm text-background/60 leading-relaxed max-w-xs">
-              A data and AI-enabled software engineering services partner —
+              A data and AI-enabled software engineering services partner,
               serving companies across all 54 African countries from Dar es
               Salaam, Tanzania.
             </p>
@@ -859,6 +1146,8 @@ export default function Home() {
       <SoftwareSection />
       <IndustriesSection />
       <ClientsSection />
+      <ContactSection />
+      <CTASection />
       <Footer />
       <FloatingWhatsApp />
     </main>

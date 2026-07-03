@@ -5,7 +5,7 @@ import StartQuiz from "./quiz";
 export const metadata: Metadata = {
   title: "Get Your Website | Driftmark Technologies",
   description:
-    "Websites, web applications, and mobile applications from TSh 400,000 — with FREE domain, hosting, emails & SEO. Answer a few quick questions and reach us on WhatsApp.",
+    "Websites, web applications, and mobile applications from TSh 400,000 with FREE domain, hosting, emails & SEO. Answer a few quick questions and reach us on WhatsApp.",
   alternates: {
     canonical: "/start",
   },
@@ -19,9 +19,9 @@ export default function StartPage() {
           <Image
             src="/driftmark-logo.png"
             alt="Driftmark Technologies"
-            width={200}
-            height={48}
-            className="h-10 w-auto"
+            width={280}
+            height={67}
+            className="h-14 md:h-16 w-auto"
             priority
           />
         </a>

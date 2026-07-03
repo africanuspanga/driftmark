@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
   description:
-    "Driftmark is a data and AI-enabled software engineering services partner based in Dar es Salaam, Tanzania — serving companies across all 54 African countries with AI, data & analytics, cloud, software engineering, experience design, and cybersecurity.",
+    "Driftmark is a data and AI-enabled software engineering services partner based in Dar es Salaam, Tanzania, serving companies across all 54 African countries with AI, data & analytics, cloud, software engineering, and cybersecurity.",
   alternates: {
     canonical: "/",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
     description:
-      "A data and AI-enabled software engineering services partner — serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
+      "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
     type: "website",
     siteName: "Driftmark Technologies",
     url: siteUrl,
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
     description:
-      "A data and AI-enabled software engineering services partner — serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
+      "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
   },
 };
 
@@ -84,7 +84,7 @@ const jsonLd = {
       url: siteUrl,
       logo: `${siteUrl}/driftmark-logo.png`,
       description:
-        "A data and AI-enabled software engineering services partner — serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
+        "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
       email: "hello@driftmark.co.tz",
       telephone: "+255682152148",
       address: {
@@ -109,7 +109,6 @@ const jsonLd = {
         "Data & Analytics",
         "Cloud",
         "Software Engineering",
-        "Experience Design",
         "Cybersecurity",
       ],
     },

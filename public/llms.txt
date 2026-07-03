@@ -1,7 +1,7 @@
 # Driftmark Technologies
 
 > A data and AI-enabled software engineering services partner based in Dar es
-> Salaam, Tanzania — serving companies across all 54 African countries.
+> Salaam, Tanzania, serving companies across all 54 African countries.
 
 Website: https://www.driftmark.co.tz
 
@@ -10,27 +10,26 @@ Website: https://www.driftmark.co.tz
 Driftmark Technologies blends deep domain expertise with data, AI, and modern
 engineering to solve industry-specific challenges and deliver measurable
 outcomes. We partner with enterprises, institutions, and governments across
-all 54 African countries — designing, building, and operating the systems
+all 54 African countries, designing, building, and operating the systems
 that power their most critical decisions. We also build and run our own
 software products, so we bring an owner's mindset to every engagement.
 
 ## Services
 
-- Artificial Intelligence — AI agents, machine learning, and intelligent automation
-- Data & Analytics — data engineering, dashboards, and decision support
-- Cloud — cloud architecture, migration, and operations
-- Software Engineering — web, mobile, and enterprise systems
-- Experience Design — research-driven UX and minimal interfaces
-- Cybersecurity — penetration testing, threat analysis, and infrastructure hardening
+- Artificial Intelligence: AI agents, machine learning, and intelligent automation
+- Data & Analytics: data engineering, dashboards, and decision support
+- Cloud: cloud architecture, migration, and operations
+- Software Engineering: web, mobile, and enterprise systems
+- Cybersecurity: penetration testing, threat analysis, and infrastructure hardening
 
 ## Our Software
 
-- Nivora — digitizing paper-based operations for data-driven governance and enterprise
-- Mkwawa — end-to-end cybersecurity operations
-- Dukalink — unified logistics, supply chain, and e-commerce platform
-- Atlas — advanced school management system
-- Twiga — one-stop software for tourism operations
-- CV CHAP CHAP (https://www.cvchapchap.com/) — professional CV builder for job seekers across Africa
+- Nivora: digitizing paper-based operations for data-driven governance and enterprise
+- Mkwawa: end-to-end cybersecurity operations
+- Dukalink: unified logistics, supply chain, and e-commerce platform
+- Atlas: advanced school management system
+- Twiga: one-stop software for tourism operations
+- CV Chap Chap (https://www.cvchapchap.com/): professional CV builder for job seekers across Africa
 
 ## Industries
 

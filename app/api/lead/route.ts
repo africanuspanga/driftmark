@@ -22,7 +22,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true, stored: true });
   } catch (error) {
-    // Never fail the client — the WhatsApp redirect is the primary path.
+    // Never fail the client; the WhatsApp redirect is the primary path.
     console.error("[lead] Failed to store lead:", error);
     return NextResponse.json({ ok: true, stored: false });
   }

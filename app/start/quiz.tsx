@@ -34,7 +34,7 @@ const content: Record<
       {
         key: "need",
         label: "Nahitaji",
-        question: "Unahitaji nini?",
+        question: "Unahitaji huduma ipi kati ya hizi?",
         options: [
           "Website",
           "Web Application",
@@ -48,7 +48,7 @@ const content: Record<
         question: "Ni kwa ajili ya nani?",
         options: [
           "Biashara yangu",
-          "Namletea mtu mwingine (pata commission ya 20%)",
+          "Ni kwa ajili ya mtu mwingine (pata commission ya 20%)",
         ],
       },
       {
@@ -88,14 +88,14 @@ const content: Record<
       },
     ],
     back: "Rudi",
-    contactTitle: "Karibu tumalizie — taarifa za mawasiliano",
+    contactTitle: "Swali la mwisho",
     companyLabel: "Jina la Kampuni *",
     companyPlaceholder: "mfano: Juma Tours",
     phoneLabel: "Namba ya Simu ya Muhusika *",
     phonePlaceholder: "mfano: 0712 345 678",
     sendButton: "Tuma kwa WhatsApp",
     sendHint:
-      "Itafungua WhatsApp na majibu yako — bonyeza send, tutakujibu mara moja.",
+      "Itafungua WhatsApp na majibu yako, bonyeza send, tutakujibu mara moja.",
     waIntro:
       "Habari Driftmark! Natoka kwenye website yenu, nahitaji huduma zenu.",
     companyMsgLabel: "Kampuni",
@@ -160,14 +160,14 @@ const content: Record<
       },
     ],
     back: "Back",
-    contactTitle: "Almost done — your contact details",
+    contactTitle: "Almost done, your contact details",
     companyLabel: "Company name *",
     companyPlaceholder: "e.g. Juma Tours",
     phoneLabel: "Contact person's phone number *",
     phonePlaceholder: "e.g. 0712 345 678",
     sendButton: "Send to WhatsApp",
     sendHint:
-      "Opens WhatsApp with your answers — hit send and we'll reply right away.",
+      "Opens WhatsApp with your answers, hit send and we'll reply right away.",
     waIntro:
       "Hey, I am coming from the Driftmark website. I am interested in your services.",
     companyMsgLabel: "Company",
@@ -231,7 +231,7 @@ export default function StartQuiz() {
     }
   }
 
-  // Computed every render so the send button can be a plain <a href> —
+  // Computed every render so the send button can be a plain <a href>,
   // real links are never stopped by popup blockers.
   function buildWhatsAppUrl() {
     if (!t) return "#";
