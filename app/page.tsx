@@ -23,6 +23,7 @@ const navLinks = [
   { label: "Our Software", href: "#software" },
   { label: "Industries", href: "#industries" },
   { label: "Clients", href: "#clients" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -68,13 +69,13 @@ const services = [
   },
   {
     title: "Data & Analytics",
-    image: "/images/data-analytics.png",
+    image: "/images/data-analytics.jpg",
     description:
       "From data engineering to dashboards, we turn raw data into decisions your teams can act on.",
   },
   {
     title: "Cloud",
-    image: "/images/cloud.png",
+    image: "/images/cloud.jpg",
     description:
       "Cloud architecture, migration, and operations built for scale, resilience, and cost efficiency.",
   },
@@ -178,6 +179,41 @@ const testimonials = [
     company: "SoftLink",
     quote:
       "Driftmark's engineering team delivered beyond expectations. Their AI solutions seamlessly integrated with our existing systems and unlocked new capabilities.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What does Driftmark Technologies do?",
+    answer:
+      "Driftmark is a data and AI-enabled software engineering services partner. We design, build, and operate AI agents, data and analytics platforms, cloud infrastructure, custom software, and cybersecurity programs for enterprises, institutions, and governments across Africa.",
+  },
+  {
+    question: "Where is Driftmark based and which countries do you serve?",
+    answer:
+      "We are headquartered at Dar Village Office Park, Mikocheni, in Dar es Salaam, Tanzania, and we work with clients in all 54 African countries, delivering both on-site and remotely.",
+  },
+  {
+    question: "How much does a website or app cost?",
+    answer:
+      "Websites, web applications, and mobile applications start from TSh 400,000, including a free domain, hosting, business emails, and SEO. Larger systems are scoped and priced per project after a short discovery call.",
+    link: { href: "/start", label: "Get a quote in minutes" },
+  },
+  {
+    question: "Does Driftmark build its own software products?",
+    answer:
+      "Yes. Alongside client work we build and operate six of our own products: Nivora for government and enterprise digitization, Mkwawa for cybersecurity operations, Dukalink for logistics and e-commerce, Atlas for school management, Twiga for tourism operations, and CV Chap Chap for professional CV building.",
+  },
+  {
+    question: "Which industries does Driftmark work with?",
+    answer:
+      "We serve government and the public sector, banking and financial services, education, tourism and hospitality, logistics and e-commerce, healthcare, and telecom, media, and technology companies.",
+  },
+  {
+    question: "How do I start a project with Driftmark?",
+    answer:
+      "Answer a few quick questions on our start page, message us on WhatsApp at +255 682 152 148, or email hello@driftmark.co.tz. We respond the same day.",
+    link: { href: "/start", label: "Start your project" },
   },
 ];
 
@@ -298,14 +334,14 @@ function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-[60] flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-white border border-border shadow-lg transition-transform hover:scale-110"
+      className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-[60] flex h-14 w-14 md:h-16 md:w-16 items-center justify-center transition-transform hover:scale-110"
     >
       <Image
         src="/whatsapp-floating-button.png"
         alt="WhatsApp"
         width={64}
         height={64}
-        className="h-10 w-10 md:h-12 md:w-12 object-contain"
+        className="h-full w-full object-contain drop-shadow-lg"
       />
     </a>
   );
@@ -321,7 +357,7 @@ function Navbar() {
     <>
       {/* Desktop Navbar */}
       <header className="fixed top-0 left-0 right-0 z-50 hidden md:flex items-center justify-between px-8 py-5 bg-background/80 backdrop-blur-md border-b border-border">
-        <a href="#" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <Image
             src="/driftmark-logo.png"
             alt="Driftmark Technologies"
@@ -343,7 +379,7 @@ function Navbar() {
             ))}
           </nav>
           <a
-            href="#contact"
+            href="/start"
             className="flex h-10 items-center justify-center border border-foreground px-6 text-sm font-medium text-foreground transition-colors hover:bg-foreground hover:text-background"
           >
             Get Started
@@ -388,7 +424,7 @@ function Navbar() {
           </button>
         </div>
         <a
-          href="#contact"
+          href="/start"
           className="flex h-10 items-center justify-center border border-foreground px-6 text-sm font-medium text-foreground"
         >
           Get Started
@@ -397,7 +433,7 @@ function Navbar() {
 
       {/* Mobile Top Logo */}
       <header className="fixed top-0 left-0 right-0 z-50 flex md:hidden items-center px-4 py-3 bg-background/80 backdrop-blur-md border-b border-border">
-        <a href="#">
+        <a href="/" aria-label="Driftmark Technologies — back to homepage">
           <Image
             src="/driftmark-logo.png"
             alt="Driftmark Technologies"
@@ -463,10 +499,24 @@ function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <video
+        ref={(video) => {
+          // React doesn't always set the DOM `muted` property from the prop,
+          // and browsers block autoplay unless the property itself is true.
+          if (video) {
+            video.muted = true;
+            video.play().catch(() => {
+              // Autoplay blocked (e.g. Low Power Mode) — poster stays visible.
+            });
+          }
+        }}
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
+        poster="/hero-poster.jpg"
+        aria-hidden="true"
+        disablePictureInPicture
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
@@ -617,8 +667,11 @@ function SoftwareSection() {
       <div className="flex flex-col">
         {products.map((product, index) => {
           const isLongName = product.name.length > 8;
+          // Decorative duplicate of the mobile h3 below — kept as a <p> with
+          // aria-hidden so each product has exactly one heading in the DOM.
           const nameEl = (
-            <h3
+            <p
+              aria-hidden="true"
               className={`font-light tracking-tight text-foreground leading-none whitespace-nowrap transition-opacity group-hover:opacity-70 ${
                 isLongName
                   ? "text-4xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
@@ -626,7 +679,7 @@ function SoftwareSection() {
               }`}
             >
               {product.name}
-            </h3>
+            </p>
           );
 
           return (
@@ -830,6 +883,50 @@ function ClientsSection() {
                 {t.company}
               </figcaption>
             </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── FAQ ─────────────────────────────────────────────────────────── */
+
+function FAQSection() {
+  return (
+    <section
+      id="faq"
+      className="bg-background px-6 md:px-12 lg:px-20 py-20 md:py-32"
+    >
+      <div className="max-w-7xl mx-auto">
+        <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
+          FAQ
+        </p>
+        <h2 className="text-3xl md:text-5xl font-light leading-tight text-foreground mb-16 md:mb-24 text-balance max-w-3xl">
+          Frequently asked questions
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+          {faqs.map((f) => (
+            <div
+              key={f.question}
+              className="border-t border-border py-8 flex flex-col gap-4"
+            >
+              <h3 className="text-xl md:text-2xl font-light text-foreground leading-snug">
+                {f.question}
+              </h3>
+              <p className="text-base text-foreground/70 leading-relaxed">
+                {f.answer}
+              </p>
+              {f.link && (
+                <a
+                  href={f.link.href}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors"
+                >
+                  {f.link.label}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              )}
+            </div>
           ))}
         </div>
       </div>
@@ -1116,6 +1213,13 @@ function Footer() {
               <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
               <span>{contact.location}</span>
             </p>
+            <a
+              href="/start"
+              className="inline-flex items-center gap-2 text-sm font-medium text-background underline underline-offset-4 hover:text-background/70 transition-colors"
+            >
+              Start a project
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
 
@@ -1146,10 +1250,25 @@ export default function Home() {
       <SoftwareSection />
       <IndustriesSection />
       <ClientsSection />
+      <FAQSection />
       <ContactSection />
       <CTASection />
       <Footer />
       <FloatingWhatsApp />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          }),
+        }}
+      />
     </main>
   );
 }

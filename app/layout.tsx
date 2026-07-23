@@ -10,7 +10,10 @@ const siteUrl = "https://www.driftmark.co.tz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
+  title: {
+    default: "AI-Powered Automation for Africa | Driftmark Technologies",
+    template: "%s | Driftmark Technologies",
+  },
   description:
     "Driftmark is a data and AI-enabled software engineering services partner based in Dar es Salaam, Tanzania, serving companies across all 54 African countries with AI, data & analytics, cloud, software engineering, and cybersecurity.",
   alternates: {
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
+    title: "AI-Powered Automation for Africa | Driftmark Technologies",
     description:
       "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
     type: "website",
@@ -45,10 +48,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/driftmark-logo.png",
-        width: 240,
-        height: 56,
-        alt: "Driftmark Technologies",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Driftmark Technologies — AI-powered automation for every decision",
       },
     ],
   },
@@ -64,9 +67,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Driftmark Technologies | AI-Powered Automation for Every Decision",
+    title: "AI-Powered Automation for Africa | Driftmark Technologies",
     description:
       "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -111,6 +115,25 @@ const jsonLd = {
         "Software Engineering",
         "Cybersecurity",
       ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Technology Services",
+        itemListElement: [
+          "Artificial Intelligence",
+          "Data & Analytics",
+          "Cloud",
+          "Software Engineering",
+          "Cybersecurity",
+        ].map((serviceName) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: serviceName,
+            provider: { "@id": `${siteUrl}/#organization` },
+            areaServed: { "@type": "Continent", name: "Africa" },
+          },
+        })),
+      },
     },
     {
       "@type": "WebSite",
@@ -130,7 +153,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased" suppressHydrationWarning>
+      <body
+        className={`${_inter.variable} font-sans antialiased`}
+        suppressHydrationWarning
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
