@@ -68,6 +68,9 @@ Answer a few questions at ${SITE_URL}/start, message us on WhatsApp at
 - Phone / WhatsApp: +255 682 152 148
 - Location: Rose Garden Road, Dar Village Office Park, Mikocheni, Dar es Salaam, Tanzania
 - Coverage: All 54 African countries
+- LinkedIn: https://www.linkedin.com/company/driftmark-technologies/
+- Instagram: https://www.instagram.com/driftmark_tz/
+- TikTok: https://www.tiktok.com/@driftmark_tz
 
 ## For agents
 

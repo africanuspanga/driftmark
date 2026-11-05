@@ -39,6 +39,12 @@ const contact = {
     "Rose Garden Road, Dar Village Office Park, Mikocheni, Dar es Salaam, Tanzania",
 };
 
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/driftmark-technologies/" },
+  { label: "Instagram", href: "https://www.instagram.com/driftmark_tz/" },
+  { label: "TikTok", href: "https://www.tiktok.com/@driftmark_tz" },
+];
+
 const differentiators = [
   {
     number: "1",
@@ -1235,6 +1241,20 @@ function Footer() {
               Start a project
               <ArrowRight className="h-4 w-4" />
             </a>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 pt-2">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="inline-flex items-center gap-1 text-sm text-background/80 hover:text-background transition-colors"
+                >
+                  {s.label}
+                  <ArrowUpRight className="h-3 w-3" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

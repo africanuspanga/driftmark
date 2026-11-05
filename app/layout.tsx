@@ -95,6 +95,11 @@ const jsonLd = {
         "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
       email: "hello@driftmark.co.tz",
       telephone: "+255682152148",
+      sameAs: [
+        "https://www.linkedin.com/company/driftmark-technologies/",
+        "https://www.instagram.com/driftmark_tz/",
+        "https://www.tiktok.com/@driftmark_tz",
+      ],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Rose Garden Road, Dar Village Office Park, Mikocheni",
