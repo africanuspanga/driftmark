@@ -21,5 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: "https://www.driftmark.co.tz/exchange-rates",
+      lastModified: new Date().toISOString().slice(0, 10),
+      changeFrequency: "daily",
+      priority: 0.7,
+    },
   ];
 }
