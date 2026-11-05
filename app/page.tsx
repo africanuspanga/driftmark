@@ -533,6 +533,21 @@ function Hero() {
           with companies across all 54 African countries, from Dar es Salaam,
           Tanzania.
         </p>
+        <div className="mt-10 hidden sm:flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="/start"
+            className="inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 text-sm font-medium hover:bg-white/85 transition-colors"
+          >
+            Start a project
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a
+            href="#services"
+            className="inline-flex items-center gap-2 border border-white/60 text-white px-7 py-3.5 text-sm font-medium hover:bg-white hover:text-black transition-colors"
+          >
+            Explore our services
+          </a>
+        </div>
       </div>
       <div className="absolute bottom-24 md:bottom-10 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-2">
         <a
@@ -1225,11 +1240,19 @@ function Footer() {
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-background/10 pt-8 mt-12">
           <p className="text-xs text-background/40">
-            {"© 2026 Driftmark Technologies. All rights reserved."}
+            {`© ${new Date().getFullYear()} Driftmark Technologies. All rights reserved.`}
           </p>
-          <p className="text-xs text-background/40">
-            Dar es Salaam, Tanzania · Serving all 54 African countries
-          </p>
+          <nav aria-label="Legal and tools" className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-background/60">
+            <a href="/exchange-rates" className="hover:text-background transition-colors">
+              Exchange Rates API
+            </a>
+            <a href="/privacy" className="hover:text-background transition-colors">
+              Privacy Policy
+            </a>
+            <span className="text-background/40">
+              Dar es Salaam, Tanzania · Serving all 54 African countries
+            </span>
+          </nav>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { WebMCP } from "@/components/webmcp";
 import "./globals.css";
 
 const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -35,8 +36,11 @@ export const metadata: Metadata = {
     "Driftmark",
   ],
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "AI-Powered Automation for Africa | Driftmark Technologies",
@@ -163,6 +167,7 @@ export default function RootLayout({
         />
         {children}
         <Analytics />
+        <WebMCP />
       </body>
     </html>
   );
