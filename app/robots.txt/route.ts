@@ -21,6 +21,7 @@ Allow: /
 Disallow: /api/
 
 Sitemap: ${SITE_URL}/sitemap.xml
+Sitemap: ${SITE_URL}/exchange-rates/sitemap.xml
 `;
 
 export function GET() {
