@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { WebMCP } from "@/components/webmcp";
+import { services, tagline } from "@/lib/site";
 import "./globals.css";
 
 const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -12,29 +13,14 @@ const siteUrl = "https://www.driftmark.co.tz";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "AI-Powered Automation for Africa | Driftmark Technologies",
+    default: "AI Agents & Software Company in Tanzania | Driftmark",
     template: "%s | Driftmark Technologies",
   },
   description:
-    "Driftmark is a data and AI-enabled software engineering services partner based in Dar es Salaam, Tanzania, serving companies across all 54 African countries with AI, data & analytics, cloud, software engineering, and cybersecurity.",
+    "Driftmark builds AI agents that organise your data and automate your workflows. AI, data, software, cloud and cybersecurity from Dar es Salaam, Tanzania.",
   alternates: {
     canonical: "/",
   },
-  keywords: [
-    "AI",
-    "Automation",
-    "Africa",
-    "Tanzania",
-    "Dar es Salaam",
-    "Software Engineering",
-    "Data & Analytics",
-    "Cloud",
-    "Enterprise Software",
-    "Cybersecurity",
-    "Logistics",
-    "AI Agents",
-    "Driftmark",
-  ],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
@@ -43,9 +29,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "AI-Powered Automation for Africa | Driftmark Technologies",
+    title: "Agentic AI systems for Tanzanian businesses | Driftmark Technologies",
     description:
-      "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
+      "We build AI agents that organise your data and automate your workflows. A Tanzanian AI and software engineering company in Dar es Salaam.",
     type: "website",
     siteName: "Driftmark Technologies",
     url: siteUrl,
@@ -55,7 +41,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Driftmark Technologies — AI-powered automation for every decision",
+        alt: "Aerial view of Dar es Salaam, home of Driftmark Technologies",
       },
     ],
   },
@@ -71,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI-Powered Automation for Africa | Driftmark Technologies",
+    title: "Agentic AI systems for Tanzanian businesses | Driftmark Technologies",
     description:
-      "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
+      "We build AI agents that organise your data and automate your workflows. A Tanzanian AI and software engineering company in Dar es Salaam.",
     images: ["/og-image.jpg"],
   },
 };
@@ -91,8 +77,7 @@ const jsonLd = {
       name: "Driftmark Technologies",
       url: siteUrl,
       logo: `${siteUrl}/driftmark-logo.png`,
-      description:
-        "A data and AI-enabled software engineering services partner, serving companies across all 54 African countries from Dar es Salaam, Tanzania.",
+      description: tagline,
       email: "hello@driftmark.co.tz",
       telephone: "+255682152148",
       sameAs: [
@@ -106,10 +91,10 @@ const jsonLd = {
         addressLocality: "Dar es Salaam",
         addressCountry: "TZ",
       },
-      areaServed: {
-        "@type": "Continent",
-        name: "Africa",
-      },
+      areaServed: [
+        { "@type": "Country", name: "Tanzania" },
+        { "@type": "Continent", name: "Africa" },
+      ],
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
@@ -118,7 +103,9 @@ const jsonLd = {
         availableLanguage: ["English", "Swahili"],
       },
       knowsAbout: [
-        "Artificial Intelligence",
+        "Agentic AI",
+        "AI agents",
+        "Workflow automation",
         "Data & Analytics",
         "Cloud",
         "Software Engineering",
@@ -127,19 +114,14 @@ const jsonLd = {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Technology Services",
-        itemListElement: [
-          "Artificial Intelligence",
-          "Data & Analytics",
-          "Cloud",
-          "Software Engineering",
-          "Cybersecurity",
-        ].map((serviceName) => ({
+        itemListElement: services.map((service) => ({
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: serviceName,
+            name: service.title,
+            url: `${siteUrl}${service.href}`,
             provider: { "@id": `${siteUrl}/#organization` },
-            areaServed: { "@type": "Continent", name: "Africa" },
+            areaServed: { "@type": "Country", name: "Tanzania" },
           },
         })),
       },

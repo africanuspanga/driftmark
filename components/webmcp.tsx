@@ -18,14 +18,16 @@ const CONTACT = {
   phone: "+255 682 152 148",
   whatsapp: "https://wa.me/255682152148",
   address: "Rose Garden Road, Dar Village Office Park, Mikocheni, Dar es Salaam, Tanzania",
-  startProject: "https://www.driftmark.co.tz/start",
-  pricing: "Websites and apps from TSh 400,000 including domain, hosting, business email and SEO; larger systems are quoted per project.",
+  startProject: "Message us on WhatsApp (https://wa.me/255682152148) or email hello@driftmark.co.tz; we reply the same day.",
+  services: "AI agents and WhatsApp chatbots, data analysis and document digitization, software development, cloud computing and cyber security, for organisations in Tanzania.",
+  pricing: "Projects are scoped and priced after a short discovery call, usually starting with one workflow.",
+  aiAutomation: "https://www.driftmark.co.tz/ai-automation",
 };
 
 const tools: Tool[] = [
   {
     name: "get_driftmark_contact",
-    description: "Get Driftmark Technologies' contact details, office address, starting price and the link to start a project.",
+    description: "Get Driftmark Technologies' contact details, office address, services, how pricing works and how to start a project.",
     inputSchema: { type: "object", properties: {} },
     execute: async () => CONTACT,
   },

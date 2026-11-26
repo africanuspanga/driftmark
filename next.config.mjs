@@ -7,6 +7,15 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  async redirects() {
+    return [
+      // The website-package quiz was retired; old links land on the contact section.
+      { source: "/start", destination: "/#contact", permanent: true },
+      { source: "/start.md", destination: "/llms.txt", permanent: true },
+      { source: "/services", destination: "/#services", permanent: true },
+      { source: "/services/ai-automation", destination: "/ai-automation", permanent: true },
+    ]
+  },
   async rewrites() {
     return [
       { source: "/exchange-rates", destination: `${EXCHANGE_RATES_ORIGIN}/` },

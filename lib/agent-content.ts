@@ -7,40 +7,48 @@ export const RATES_URL = `${SITE_URL}/exchange-rates`;
 
 export const llmsTxt = `# Driftmark Technologies
 
-> A data and AI-enabled software engineering services partner based in Dar es
-> Salaam, Tanzania, serving companies across all 54 African countries.
+> A Tanzanian AI and software engineering company in Dar es Salaam. We build
+> AI agents and chatbots that organise your data and automate your workflows,
+> for businesses and institutions in Tanzania.
 
 Website: ${SITE_URL}
 
 ## About
 
-Driftmark Technologies blends deep domain expertise with data, AI, and modern
-engineering to solve industry-specific challenges and deliver measurable
-outcomes. We partner with enterprises, institutions, and governments across
-all 54 African countries, designing, building, and operating the systems
-that power their most critical decisions. We also build and run our own
-software products, so we bring an owner's mindset to every engagement.
+Driftmark Technologies builds AI agents, data platforms and software for
+businesses and institutions in Tanzania. We start with one workflow that costs
+a team time, automate it, and measure the result before scaling. We also build
+and run our own software products. Our home is Dar es Salaam, and we take on
+projects elsewhere in Africa too.
 
 ## Services
 
-- Artificial Intelligence: AI agents, machine learning, and intelligent automation
-- Data & Analytics: data engineering, dashboards, and decision support
-- Cloud: cloud architecture, migration, and operations
-- Software Engineering: web, mobile, and enterprise systems
-- Cybersecurity: penetration testing, threat analysis, and infrastructure hardening
+- AI Agents & Automation (${SITE_URL}/ai-automation): agentic AI systems, AI
+  agents and WhatsApp chatbots (WhatsApp Business API) that automate workflows
+  such as customer messages, invoices, reports and follow-ups, with people
+  approving the steps that matter
+- Data & Analytics (${SITE_URL}/services/data-analytics): data analysis,
+  dashboards, data engineering and document digitization
+- Software Engineering (${SITE_URL}/services/software-engineering): web
+  applications, mobile apps, integrations and business systems
+- Cloud (${SITE_URL}/services/cloud): cloud computing set-up, migration and operations
+- Cyber Security (${SITE_URL}/services/cybersecurity): agent-assisted penetration
+  testing, reporting and hardening
 
-Websites, web applications, and mobile applications start from TSh 400,000,
-including a free domain, hosting, business emails, and SEO. Larger systems are
-scoped and priced per project after a short discovery call.
+Projects are scoped and priced after a short discovery call. We usually start
+with one workflow so the client sees results before expanding.
 
-## Our Software
+## Our software
 
-- Nivora: digitizing paper-based operations for data-driven governance and enterprise
-- Mkwawa: end-to-end cybersecurity operations
-- Dukalink: unified logistics, supply chain, and e-commerce platform
-- Atlas: advanced school management system
-- Twiga: one-stop software for tourism operations
-- CV Chap Chap (https://www.cvchapchap.com/): professional CV builder for job seekers across Africa
+- Nivora: paper to AI-ready data. We digitise paper files, forms and archives
+  into structured records (Markdown and databases). Available on request.
+- Mkwawa: agent-assisted security testing of websites, apps and systems.
+  Available on request.
+- Shopi (https://shopi.tz): an online shop in one link for sellers on
+  Instagram, TikTok and WhatsApp, with Lipa Namba or cash on delivery.
+- Atlas (https://atlasgo.co.tz): school management system for Tanzanian
+  schools: fees, attendance, marks, report cards and SMS to parents.
+- CV Chap Chap (https://www.cvchapchap.com/): professional CV builder for job seekers.
 
 ## Free tools
 
@@ -54,20 +62,20 @@ scoped and priced per project after a short discovery call.
 ## Industries
 
 Government & Public Sector, Banking & Financial Services, Education,
-Tourism & Hospitality, Logistics & E-Commerce, Healthcare, and
+Tourism & Hospitality, Retail, Logistics & E-Commerce, Healthcare, and
 Telecom, Media & Technology.
 
 ## How to start a project
 
-Answer a few questions at ${SITE_URL}/start, message us on WhatsApp at
-+255 682 152 148, or email hello@driftmark.co.tz. We respond the same day.
+Message us on WhatsApp at +255 682 152 148 or email hello@driftmark.co.tz.
+Tell us which task takes your team the most time. We reply the same day.
 
 ## Contact
 
 - Email: hello@driftmark.co.tz
 - Phone / WhatsApp: +255 682 152 148
 - Location: Rose Garden Road, Dar Village Office Park, Mikocheni, Dar es Salaam, Tanzania
-- Coverage: All 54 African countries
+- Focus: Tanzania (projects elsewhere in Africa on request)
 - LinkedIn: https://www.linkedin.com/company/driftmark-technologies/
 - Instagram: https://www.instagram.com/driftmark_tz/
 - TikTok: https://www.tiktok.com/@driftmark_tz
@@ -78,24 +86,6 @@ Answer a few questions at ${SITE_URL}/start, message us on WhatsApp at
 - AI catalog: ${SITE_URL}/.well-known/ai-catalog.json
 - Agent skills: ${SITE_URL}/.well-known/agent-skills/index.json
 - Privacy policy: ${SITE_URL}/privacy
-`;
-
-export const startMarkdown = `# Start a project with Driftmark Technologies
-
-Driftmark builds websites, web and mobile applications, AI agents, data
-platforms, cloud systems and cybersecurity programmes for organisations across
-Africa. Websites and apps start from TSh 400,000, including a free domain,
-hosting, business emails and SEO.
-
-## Ways to start
-
-1. Answer a few quick questions at ${SITE_URL}/start (in Kiswahili or English).
-   Your answers open a pre-filled WhatsApp message to our team.
-2. WhatsApp or call +255 682 152 148.
-3. Email hello@driftmark.co.tz.
-
-We respond the same day. Office: Rose Garden Road, Dar Village Office Park,
-Mikocheni, Dar es Salaam, Tanzania.
 `;
 
 export const exchangeRatesSkill = `---

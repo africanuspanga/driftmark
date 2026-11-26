@@ -34,11 +34,11 @@ const manifest = {
       displayName: "Driftmark Technologies company guide",
       type: "text/plain",
       url: `${SITE_URL}/llms.txt`,
-      description: "Services, software products, pricing, industries and contact details of Driftmark Technologies, a software engineering and AI company in Dar es Salaam serving all of Africa.",
+      description: "Services, software products, industries and contact details of Driftmark Technologies, a Tanzanian AI and software engineering company in Dar es Salaam.",
       representativeQueries: [
         "software development company in Dar es Salaam",
         "who can build an AI agent for my business in Tanzania",
-        "how much does a website cost in Tanzania",
+        "who builds WhatsApp chatbots for businesses in Tanzania",
       ],
     },
   ],

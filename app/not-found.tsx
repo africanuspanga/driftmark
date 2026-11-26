@@ -27,8 +27,8 @@ export default function NotFound() {
             Go to the homepage
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <Link href="/start" className="inline-flex items-center gap-2 border border-foreground px-6 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition-colors">
-            Start a project
+          <Link href="/#contact" className="inline-flex items-center gap-2 border border-foreground px-6 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition-colors">
+            Contact us
           </Link>
         </div>
       </div>

@@ -5,11 +5,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Driftmark Technologies collects, uses and protects the information you share through driftmark.co.tz, the project quiz, WhatsApp and email.",
+    "How Driftmark Technologies collects, uses and protects the information you share through driftmark.co.tz, WhatsApp and email.",
   alternates: { canonical: "/privacy" },
 };
 
-const LAST_UPDATED = "5 November 2026";
+const LAST_UPDATED = "26 November 2026";
 
 const sections: { title: string; body: React.ReactNode }[] = [
   {
@@ -27,10 +27,6 @@ const sections: { title: string; body: React.ReactNode }[] = [
     title: "What we collect",
     body: (
       <ul>
-        <li>
-          <strong>Project quiz (/start):</strong> your company name, a contact phone number, your language choice and
-          your answers to the questions about your project.
-        </li>
         <li>
           <strong>Messages you send us:</strong> anything you write to us by WhatsApp, phone or email, including your
           name and contact details.
@@ -59,11 +55,8 @@ const sections: { title: string; body: React.ReactNode }[] = [
         <p>We do not sell your information. We use these service providers to run the website and talk to you:</p>
         <ul>
           <li>
-            <strong>WhatsApp (Meta):</strong> finishing the quiz opens a WhatsApp message to us with your answers.
+            <strong>WhatsApp (Meta):</strong> the contact form and WhatsApp buttons open a WhatsApp message to us.
             WhatsApp’s own privacy policy applies to that message.
-          </li>
-          <li>
-            <strong>Google:</strong> quiz answers are saved to a Google Sheet that only our team can access.
           </li>
           <li>
             <strong>Vercel:</strong> hosts the website and provides the anonymous analytics.
@@ -98,7 +91,7 @@ const sections: { title: string; body: React.ReactNode }[] = [
       <p>
         The website is served only over HTTPS, and access to stored enquiries is limited to our team. No method of
         sending or storing data is completely secure, so please don’t send passwords or payment details through the
-        quiz or chat.
+        contact form or chat.
       </p>
     ),
   },
@@ -140,7 +133,7 @@ export default function PrivacyPage() {
       </article>
       <footer className="max-w-3xl border-t border-border pt-8 pb-4 text-xs text-muted-foreground flex flex-wrap gap-x-6 gap-y-2">
         <Link href="/" className="hover:text-foreground">Home</Link>
-        <Link href="/start" className="hover:text-foreground">Start a project</Link>
+        <Link href="/#contact" className="hover:text-foreground">Contact us</Link>
         <span>© {new Date().getFullYear()} Driftmark Technologies</span>
       </footer>
     </main>

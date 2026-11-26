@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 // Markdown for agents: requests that prefer `text/markdown` get a Markdown version of the page.
-const MARKDOWN_PAGES: Record<string, string> = { "/": "/index.md", "/start": "/start.md" };
+const MARKDOWN_PAGES: Record<string, string> = { "/": "/index.md" };
 
 export function proxy(request: NextRequest) {
   const accept = request.headers.get("accept") ?? "";
@@ -12,4 +12,4 @@ export function proxy(request: NextRequest) {
   return NextResponse.next();
 }
 
-export const config = { matcher: ["/", "/start"] };
+export const config = { matcher: ["/"] };
