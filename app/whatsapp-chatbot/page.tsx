@@ -15,9 +15,9 @@ import {
 } from "@/components/page-parts";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "WhatsApp Chatbot & WhatsApp Business API in Tanzania | Driftmark";
+const TITLE = "WhatsApp Chatbot & WhatsApp Business API | Driftmark";
 const DESCRIPTION =
-  "AI WhatsApp chatbots for Tanzanian businesses on the WhatsApp Business API: replies in Kiswahili and English, takes orders and bookings, hands over to staff.";
+  "AI WhatsApp chatbots for businesses on the WhatsApp Business API: replies in your customers' language, takes orders and bookings, hands over to staff.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -35,7 +35,7 @@ const crumbs = [
 const features = [
   {
     title: "Answers questions, day and night",
-    body: "Prices, opening hours, locations, delivery, stock: the chatbot answers from your own information, in Kiswahili or English, the way your customers write.",
+    body: "Prices, opening hours, locations, delivery, stock: the chatbot answers from your own information, in your customers' language, the way they write.",
   },
   {
     title: "Takes orders, bookings and appointments",
@@ -43,7 +43,7 @@ const features = [
   },
   {
     title: "Shares payment details and confirms",
-    body: "It sends your Lipa Namba or other payment instructions, and your team or your system confirms the payment before the order moves on.",
+    body: "It sends your mobile money, bank or other payment instructions, and your team or your system confirms the payment before the order moves on.",
   },
   {
     title: "Hands over to a person",
@@ -74,9 +74,9 @@ const faqs = [
       "The WhatsApp Business app is a free app that one person runs on a phone. The WhatsApp Business API (the WhatsApp Business Platform) lets software send and receive your WhatsApp messages, so an AI chatbot can answer customers, connect to your systems and share conversations with your team.",
   },
   {
-    question: "Can the chatbot reply in Kiswahili?",
+    question: "Can the chatbot reply in other languages?",
     answer:
-      "Yes. It reads and replies in Kiswahili and English, and we test it on real messages from your customers before it goes live.",
+      "Yes. It reads and replies in English, Kiswahili and other languages, and we test it on real messages from your customers before it goes live.",
   },
   {
     question: "Can we keep our current WhatsApp number?",
@@ -108,7 +108,6 @@ const serviceJsonLd = {
   url: `${SITE_URL}/whatsapp-chatbot`,
   description: DESCRIPTION,
   provider: { "@id": `${SITE_URL}/#organization` },
-  areaServed: { "@type": "Country", name: "Tanzania" },
 };
 
 export default function WhatsappChatbotPage() {
@@ -125,7 +124,7 @@ export default function WhatsappChatbotPage() {
           </h1>
           <p className="mt-8 text-lg md:text-xl text-foreground/70 leading-relaxed max-w-3xl">
             Your customers already message you on WhatsApp. We build AI chatbots on the WhatsApp Business API that
-            answer them in Kiswahili and English, take orders and bookings, update your records and hand the
+            answer them in their own language, take orders and bookings, update your records and hand the
             conversation to your team when it needs a person.
           </p>
           <div className="mt-12">

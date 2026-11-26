@@ -13,11 +13,11 @@ const siteUrl = "https://www.driftmark.co.tz";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "AI Agents & Software Company in Tanzania | Driftmark",
+    default: "AI Agents & Automation for Every Industry | Driftmark",
     template: "%s | Driftmark Technologies",
   },
   description:
-    "Driftmark builds AI agents that organise your data and automate your workflows. AI, data, software, cloud and cybersecurity from Dar es Salaam, Tanzania.",
+    "Driftmark builds AI agents that organise your data and automate your workflows, backed by data, software, cloud and cybersecurity engineering.",
   alternates: {
     canonical: "/",
   },
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Agentic AI systems for Tanzanian businesses | Driftmark Technologies",
+    title: "Superintelligent Automation for Every Industry | Driftmark Technologies",
     description:
-      "We build AI agents that organise your data and automate your workflows. A Tanzanian AI and software engineering company in Dar es Salaam.",
+      "AI agents that organise your data and automate your workflows.",
     type: "website",
     siteName: "Driftmark Technologies",
     url: siteUrl,
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agentic AI systems for Tanzanian businesses | Driftmark Technologies",
+    title: "Superintelligent Automation for Every Industry | Driftmark Technologies",
     description:
-      "We build AI agents that organise your data and automate your workflows. A Tanzanian AI and software engineering company in Dar es Salaam.",
+      "AI agents that organise your data and automate your workflows.",
     images: ["/og-image.jpg"],
   },
 };
@@ -91,10 +91,6 @@ const jsonLd = {
         addressLocality: "Dar es Salaam",
         addressCountry: "TZ",
       },
-      areaServed: [
-        { "@type": "Country", name: "Tanzania" },
-        { "@type": "Continent", name: "Africa" },
-      ],
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
@@ -121,7 +117,6 @@ const jsonLd = {
             name: service.title,
             url: `${siteUrl}${service.href}`,
             provider: { "@id": `${siteUrl}/#organization` },
-            areaServed: { "@type": "Country", name: "Tanzania" },
           },
         })),
       },

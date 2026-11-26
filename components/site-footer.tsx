@@ -16,8 +16,8 @@ export function SiteFooter() {
               className="h-12 w-auto brightness-0 invert mb-6"
             />
             <p className="text-sm text-background/60 leading-relaxed max-w-xs">
-              A Tanzanian AI and software engineering company, based in Dar es Salaam. We build AI agents that
-              organise your data and automate your workflows.
+              An AI and software engineering company. We build AI agents that organise your data and automate your
+              workflows.
             </p>
           </div>
           <div className="flex flex-col gap-3">

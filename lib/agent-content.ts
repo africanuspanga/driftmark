@@ -7,19 +7,18 @@ export const RATES_URL = `${SITE_URL}/exchange-rates`;
 
 export const llmsTxt = `# Driftmark Technologies
 
-> A Tanzanian AI and software engineering company in Dar es Salaam. We build
-> AI agents and chatbots that organise your data and automate your workflows,
-> for businesses and institutions in Tanzania.
+> An AI and software engineering company. We build AI agents and chatbots
+> that organise your data and automate your workflows.
 
 Website: ${SITE_URL}
 
 ## About
 
 Driftmark Technologies builds AI agents, data platforms and software for
-businesses and institutions in Tanzania. We start with one workflow that costs
-a team time, automate it, and measure the result before scaling. We also build
-and run our own software products. Our home is Dar es Salaam, and we take on
-projects elsewhere in Africa too.
+businesses and institutions. We start with one workflow that costs a team
+time, automate it, and measure the result before scaling. We also build and
+run our own software products. We are based in Dar es Salaam and work with
+clients wherever they are, on-site or remotely.
 
 ## Services
 
@@ -28,7 +27,7 @@ projects elsewhere in Africa too.
   such as customer messages, invoices, reports and follow-ups, with people
   approving the steps that matter
 - WhatsApp Chatbots (${SITE_URL}/whatsapp-chatbot): AI chatbots on the WhatsApp
-  Business API that answer customers in Kiswahili and English, take orders and
+  Business API that answer customers in English, Kiswahili and other languages, take orders and
   bookings, and hand over to staff
 - Data & Analytics (${SITE_URL}/services/data-analytics): data analysis,
   dashboards, data engineering and document digitization
@@ -80,7 +79,7 @@ Tell us which task takes your team the most time. We reply the same day.
 - Email: hello@driftmark.co.tz
 - Phone / WhatsApp: +255 682 152 148
 - Location: Rose Garden Road, Dar Village Office Park, Mikocheni, Dar es Salaam, Tanzania
-- Focus: Tanzania (projects elsewhere in Africa on request)
+- Clients: anywhere, on-site or remotely
 - LinkedIn: https://www.linkedin.com/company/driftmark-technologies/
 - Instagram: https://www.instagram.com/driftmark_tz/
 - TikTok: https://www.tiktok.com/@driftmark_tz

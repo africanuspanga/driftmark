@@ -28,7 +28,7 @@ export const socials = [
 ];
 
 export const tagline =
-  "A Tanzanian AI and software engineering company. We build AI agents that organise your data and automate your workflows.";
+  "An AI and software engineering company. We build AI agents that organise your data and automate your workflows.";
 
 /* ─── Services ─────────────────────────────────────────────────────── */
 
@@ -54,9 +54,9 @@ export const services: Service[] = [
     href: "/ai-automation",
     title: "AI Agents & Automation",
     heading: "AI agents and chatbots that automate your business workflows",
-    metaTitle: "AI Agents, Chatbots & Automation in Tanzania | Driftmark",
+    metaTitle: "AI Agents, Chatbots & Automation | Driftmark",
     metaDescription:
-      "Driftmark builds AI agents, WhatsApp chatbots and agentic AI systems for Tanzanian businesses: they organise your data and automate your workflows.",
+      "Driftmark builds AI agents, WhatsApp chatbots and agentic AI systems for businesses: they organise your data and automate your workflows.",
     image: "/images/ai.jpg",
     summary:
       "AI agents that read your documents and messages, follow your rules and do the repetitive work, with your team approving what matters.",
@@ -68,10 +68,10 @@ export const services: Service[] = [
     slug: "data-analytics",
     href: "/services/data-analytics",
     title: "Data & Analytics",
-    heading: "Data analysis and document digitization in Tanzania",
-    metaTitle: "Data Analysis & Document Digitization in Tanzania | Driftmark",
+    heading: "Data analysis and document digitization",
+    metaTitle: "Data Analysis & Document Digitization | Driftmark",
     metaDescription:
-      "Data analysis, dashboards and document digitization for Tanzanian organisations. Driftmark turns paper and scattered records into data your team and AI can use.",
+      "Data analysis, dashboards and document digitization. Driftmark turns paper and scattered records into data your team and AI can use.",
     image: "/images/data-analytics.jpg",
     summary:
       "We bring your records into one place, clean them, and turn them into dashboards and data your AI agents can work with.",
@@ -117,15 +117,15 @@ export const services: Service[] = [
     slug: "software-engineering",
     href: "/services/software-engineering",
     title: "Software Engineering",
-    heading: "Software development company in Dar es Salaam, Tanzania",
-    metaTitle: "Software Development Company in Tanzania | Driftmark",
+    heading: "Software development for web, mobile and business systems",
+    metaTitle: "Software Development Company | Driftmark",
     metaDescription:
-      "Driftmark is a software development company in Dar es Salaam: web applications, mobile apps, integrations and business systems for Tanzanian organisations.",
+      "Driftmark is a software development company based in Dar es Salaam, building web applications, mobile apps, integrations and business systems.",
     image: "/images/software-engineering.jpg",
     summary:
       "Web platforms, mobile apps and internal systems, designed for how your team and your customers actually work.",
     intro:
-      "We design, build and run software for organisations in Tanzania: customer-facing platforms, internal tools and the integrations that connect them. We build our own products the same way, so we know what it takes to keep software running after launch.",
+      "We design, build and run software for organisations: customer-facing platforms, internal tools and the integrations that connect them. We build our own products the same way, so we know what it takes to keep software running after launch.",
     offerings: [
       {
         title: "Web applications and platforms",
@@ -145,7 +145,7 @@ export const services: Service[] = [
       },
       {
         title: "School management system (Atlas)",
-        body: "Our own school management system for Tanzanian schools: fees and arrears, attendance, marks, report cards and SMS to parents.",
+        body: "Our own school management system: fees and arrears, attendance, marks, report cards and SMS to parents.",
       },
     ],
     product: {
@@ -170,10 +170,10 @@ export const services: Service[] = [
     slug: "cloud",
     href: "/services/cloud",
     title: "Cloud",
-    heading: "Cloud computing services in Tanzania",
-    metaTitle: "Cloud Computing Services in Tanzania | Driftmark",
+    heading: "Cloud computing services",
+    metaTitle: "Cloud Computing Services | Driftmark",
     metaDescription:
-      "Cloud computing services for Tanzanian organisations: set-up, migration and operations. Driftmark keeps your systems secure, fast and affordable in the cloud.",
+      "Cloud computing services: set-up, migration and operations. Driftmark keeps your systems secure, fast and affordable in the cloud.",
     image: "/images/cloud.jpg",
     summary:
       "Cloud set-up, migration and day-to-day operations that keep your systems fast, secure and affordable.",
@@ -214,10 +214,10 @@ export const services: Service[] = [
     slug: "cybersecurity",
     href: "/services/cybersecurity",
     title: "Cyber Security",
-    heading: "Cyber security and penetration testing in Tanzania",
-    metaTitle: "Cyber Security & Penetration Testing in Tanzania | Driftmark",
+    heading: "Cyber security and penetration testing",
+    metaTitle: "Cyber Security & Penetration Testing | Driftmark",
     metaDescription:
-      "Cyber security for Tanzanian organisations: agent-assisted penetration testing and hardening. Mkwawa by Driftmark finds weaknesses before attackers do.",
+      "Cyber security with agent-assisted penetration testing and hardening. Mkwawa by Driftmark finds weaknesses before attackers do.",
     image: "/images/cybersecurity.jpg",
     summary:
       "Security testing with AI agents, plus the hardening work to fix what we find.",
@@ -306,7 +306,7 @@ export const products: Product[] = [
     name: "Atlas",
     number: "/0.4",
     description:
-      "School management software for Tanzanian schools: fees and arrears, attendance, marks and report cards, and SMS to parents, in one place.",
+      "School management software: fees and arrears, attendance, marks and report cards, and SMS to parents, in one place.",
     href: "/school-management-system",
     linkLabel: "Learn about Atlas",
   },
@@ -314,7 +314,7 @@ export const products: Product[] = [
     name: "CV Chap Chap",
     number: "/0.5",
     description:
-      "Build a professional CV in minutes. Helping job seekers in Tanzania and across Africa present their best selves and land the roles they deserve.",
+      "Build a professional CV in minutes. Helping job seekers present their best selves and land the roles they deserve.",
     href: "https://www.cvchapchap.com/",
     external: true,
     linkLabel: "Visit CV Chap Chap",
@@ -359,7 +359,7 @@ export const homeFaqs: { question: string; answer: string; link?: { href: string
   {
     question: "What does Driftmark Technologies do?",
     answer:
-      "We are a Tanzanian AI and software engineering company. We build AI agents that automate business workflows, along with the data platforms, software, cloud systems and security testing behind them, for businesses and institutions in Tanzania.",
+      "We are an AI and software engineering company. We build AI agents that automate business workflows, along with the data platforms, software, cloud systems and security testing behind them.",
     link: { href: "/ai-automation", label: "How AI automation works" },
   },
   {
@@ -370,7 +370,7 @@ export const homeFaqs: { question: string; answer: string; link?: { href: string
   {
     question: "Where is Driftmark based and who do you work with?",
     answer:
-      "Our office is at Dar Village Office Park, Mikocheni, Dar es Salaam. We focus on businesses and institutions in Tanzania, and we also take on projects in other African countries, on-site or remotely.",
+      "Our office is at Dar Village Office Park, Mikocheni, Dar es Salaam. We work with businesses and institutions wherever they are, on-site or remotely.",
   },
   {
     question: "How much does an AI automation project cost?",
@@ -391,41 +391,5 @@ export const homeFaqs: { question: string; answer: string; link?: { href: string
     question: "How do I start a project with Driftmark?",
     answer:
       "Message us on WhatsApp at +255 682 152 148 or email hello@driftmark.co.tz. Tell us which task takes your team the most time, and we will reply the same day.",
-  },
-];
-
-/* ─── Why now: TCRA Q3 2026 (quarter ending September 2026) ───────── */
-
-export const tcraSource = {
-  label: "TCRA Communications Sector Performance Report, quarter ending September 2026",
-  href: "https://www.tcra.go.tz/publications/statistics",
-};
-
-export const tcraStats = [
-  {
-    value: "123.2M",
-    label: "Telecom subscriptions",
-    detail: "175.91 for every 100 people: more subscriptions than people.",
-  },
-  {
-    value: "1,206 PB",
-    label: "Data used in three months",
-    detail: "Up 15.90% on the previous quarter.",
-  },
-  {
-    value: "825.8M",
-    label: "Mobile money transactions a month",
-    detail: "Monthly average, up 18.05% on the previous quarter.",
-  },
-  {
-    value: "−18.82%",
-    label: "Domestic posted items",
-    detail: "SMS traffic fell 5.71% and pay-TV decoders 10.71% in the same quarter.",
-  },
-  {
-    value: "1.30M",
-    label: "Machine-to-machine SIM cards",
-    detail:
-      "Up 5.47%. TCRA says this signals “gradual progress in the deployment of IoT and digital automation services.”",
   },
 ];

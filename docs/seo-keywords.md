@@ -39,12 +39,20 @@ Researched 26 November 2026. Sources:
 
 | Page | Primary terms |
 |---|---|
-| `/` | AI agents, agentic AI, software company in Tanzania |
+| `/` | AI agents, agentic AI, AI automation |
 | `/ai-automation` | AI agents, AI chatbot, WhatsApp chatbot / WhatsApp Business API, AI automation, workflow automation |
 | `/services/data-analytics` | data analysis, document digitization |
-| `/services/software-engineering` | software development company in Tanzania / Dar es Salaam, school management system |
-| `/services/cloud` | cloud computing services in Tanzania |
-| `/services/cybersecurity` | cyber security, cyber security companies in Tanzania, penetration testing |
+| `/services/software-engineering` | software development company (Dar es Salaam in the meta description), school management system |
+| `/services/cloud` | cloud computing services |
+| `/services/cybersecurity` | cyber security, penetration testing |
+
+## Positioning
+
+The copy is location-neutral: the site should read as open to clients anywhere, not as a Tanzania-only
+company. "Tanzania" / "Dar es Salaam" appear only as facts (address, contact details, privacy law), in the
+software page's meta description, and in products that genuinely are Tanzanian (Bank of Tanzania exchange
+rates, Atlas with NECTA and TZS pricing). The volumes above back this up:
+the "... tanzania" queries are tiny or have no measurable volume, while the generic terms carry the demand.
 
 ## Next opportunities
 - A Kiswahili version of the homepage and the AI page.

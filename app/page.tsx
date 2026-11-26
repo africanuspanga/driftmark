@@ -11,9 +11,9 @@ import { contact, homeFaqs, industries, products, services } from "@/lib/site";
 const differentiators = [
   {
     number: "1",
-    title: "Built for Tanzania",
+    title: "Built around your customers",
     description:
-      "Kiswahili and English, WhatsApp-first customers, mobile money and the way Tanzanian teams actually work. We design for that from day one.",
+      "WhatsApp, mobile money, and whatever language your customers write in. We design for how your customers and your team actually work, from day one.",
   },
   {
     number: "2",
@@ -43,15 +43,13 @@ function Hero() {
       <HeroVideo />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="mb-6 text-xs sm:text-sm font-medium tracking-widest uppercase text-white/70">
-          AI automation · Dar es Salaam, Tanzania
-        </p>
-        <h1 className="max-w-5xl text-4xl font-light leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl text-balance">
-          Agentic AI systems for Tanzanian businesses
+        <h1 className="max-w-5xl text-4xl font-light leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+          Superintelligent Automation
+          <br />
+          for Every Industry
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/85 leading-relaxed">
-          We build AI agents that organise your data and automate your workflows, so your team spends its time on
-          the work that grows the business.
+          AI agents that organise your data and automate your workflows.
         </p>
         <div className="mt-10 hidden sm:flex flex-wrap items-center justify-center gap-4">
           <a
@@ -89,13 +87,13 @@ function AboutSection() {
       <div className="max-w-7xl mx-auto">
         <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">About Us</p>
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-light leading-tight max-w-4xl mb-8 text-balance text-foreground">
-          We are a Tanzanian AI and software engineering company.
+          We are an AI and software engineering company.
         </h2>
         <p className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-3xl mb-20 md:mb-28">
-          Driftmark Technologies builds AI agents, data platforms and software for businesses and institutions in
-          Tanzania. We start with one workflow that costs your team time, automate it, and measure the result before
-          we scale. We also build and run our own products, so we bring an owner&apos;s mindset to every
-          engagement. Our home is Dar es Salaam, and we take on projects elsewhere in Africa too.
+          Driftmark Technologies builds AI agents, data platforms and software for businesses and institutions. We
+          start with one workflow that costs your team time, automate it, and measure the result before we scale. We
+          also build and run our own products, so we bring an owner&apos;s mindset to every engagement. We work with
+          clients wherever they are, on-site or remotely.
         </p>
 
         <h3 className="text-2xl md:text-4xl font-light text-center text-foreground mb-14 md:mb-20">
@@ -136,7 +134,7 @@ function ServicesSection() {
       <div className="max-w-7xl mx-auto">
         <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-6">Services</p>
         <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-3xl mb-16 md:mb-24 text-balance">
-          AI, data and software engineering for Tanzanian organisations
+          AI, data and software engineering under one roof
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -273,11 +271,11 @@ function IndustriesSection() {
           <div>
             <p className="text-sm font-medium tracking-widest uppercase text-background/50 mb-6">Industries</p>
             <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-2xl text-balance">
-              Sectors we work with in Tanzania
+              Every industry runs on workflows
             </h2>
           </div>
           <p className="text-base text-background/60 leading-relaxed max-w-xs md:text-right shrink-0">
-            From Dar es Salaam, for organisations across Tanzania.
+            These are the sectors we work with most. If yours isn&apos;t listed, talk to us anyway.
           </p>
         </div>
 

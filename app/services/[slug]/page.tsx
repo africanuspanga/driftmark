@@ -60,7 +60,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     url: `${SITE_URL}${service.href}`,
     description: service.metaDescription,
     provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: { "@type": "Country", name: "Tanzania" },
   };
 
   return (

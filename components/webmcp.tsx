@@ -19,7 +19,7 @@ const CONTACT = {
   whatsapp: "https://wa.me/255682152148",
   address: "Rose Garden Road, Dar Village Office Park, Mikocheni, Dar es Salaam, Tanzania",
   startProject: "Message us on WhatsApp (https://wa.me/255682152148) or email hello@driftmark.co.tz; we reply the same day.",
-  services: "AI agents and WhatsApp chatbots, data analysis and document digitization, software development, cloud computing and cyber security, for organisations in Tanzania.",
+  services: "AI agents and WhatsApp chatbots, data analysis and document digitization, software development, cloud computing and cyber security.",
   pricing: "Projects are scoped and priced after a short discovery call, usually starting with one workflow.",
   aiAutomation: "https://www.driftmark.co.tz/ai-automation",
 };

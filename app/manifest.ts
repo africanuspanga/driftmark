@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Driftmark Technologies",
     short_name: "Driftmark",
-    description: "Data and AI-enabled software engineering for companies across Africa, from Dar es Salaam, Tanzania.",
+    description: "AI agents that organise your data and automate your workflows.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
