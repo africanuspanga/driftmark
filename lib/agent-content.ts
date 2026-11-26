@@ -27,6 +27,9 @@ projects elsewhere in Africa too.
   agents and WhatsApp chatbots (WhatsApp Business API) that automate workflows
   such as customer messages, invoices, reports and follow-ups, with people
   approving the steps that matter
+- WhatsApp Chatbots (${SITE_URL}/whatsapp-chatbot): AI chatbots on the WhatsApp
+  Business API that answer customers in Kiswahili and English, take orders and
+  bookings, and hand over to staff
 - Data & Analytics (${SITE_URL}/services/data-analytics): data analysis,
   dashboards, data engineering and document digitization
 - Software Engineering (${SITE_URL}/services/software-engineering): web
@@ -46,8 +49,10 @@ with one workflow so the client sees results before expanding.
   Available on request.
 - Shopi (https://shopi.tz): an online shop in one link for sellers on
   Instagram, TikTok and WhatsApp, with Lipa Namba or cash on delivery.
-- Atlas (https://atlasgo.co.tz): school management system for Tanzanian
-  schools: fees, attendance, marks, report cards and SMS to parents.
+- Atlas (${SITE_URL}/school-management-system, https://atlasgo.co.tz): school
+  management and student information system for Tanzanian schools: fees and
+  arrears, attendance, marks, report cards and SMS to parents. TZS 2,500,000
+  per school per year, 20,000 SMS included.
 - CV Chap Chap (https://www.cvchapchap.com/): professional CV builder for job seekers.
 
 ## Free tools

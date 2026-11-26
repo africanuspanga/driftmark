@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: s.slug === "ai-automation" ? 0.9 : 0.8,
     })),
+    { url: `${SITE_URL}/whatsapp-chatbot`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/school-management-system`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${SITE_URL}/exchange-rates`,
       lastModified: new Date().toISOString().slice(0, 10),

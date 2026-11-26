@@ -11,7 +11,6 @@ import {
   FaqSection,
   JsonLd,
   PrimaryActions,
-  ProcessSection,
   TextLink,
 } from "@/components/page-parts";
 import { serviceBySlug, servicePages, SITE_URL, tcraSource, tcraStats } from "@/lib/site";
@@ -51,10 +50,12 @@ const agentSteps = [
   },
 ];
 
-const workflows = [
+const workflows: { title: string; body: string; href?: string; linkLabel?: string }[] = [
   {
     title: "WhatsApp chatbot for your business",
     body: "An AI chatbot on the WhatsApp Business API that answers customers in Kiswahili and English, takes orders and bookings, and hands the chat to your staff when it needs a person.",
+    href: "/whatsapp-chatbot",
+    linkLabel: "WhatsApp chatbots",
   },
   {
     title: "Invoices and receipts",
@@ -75,6 +76,27 @@ const workflows = [
   {
     title: "Security testing",
     body: "With Mkwawa, AI agents test your websites and systems for weaknesses, and our team helps you fix what they find.",
+  },
+];
+
+const pilot = [
+  {
+    step: "01",
+    title: "Discovery",
+    give: "A short session with the people who do the work today, and real examples of the messages, documents or reports involved.",
+    get: "A one-page plan: the workflow, the systems it touches, what the agent will and won't do, and how we will measure success.",
+  },
+  {
+    step: "02",
+    title: "Pilot",
+    give: "Access to the systems involved, starting with test access, and regular feedback from the team using it.",
+    get: "A working agent on your real workflow, tested with your team, with a person approving the steps that matter.",
+  },
+  {
+    step: "03",
+    title: "Run and scale",
+    give: "The decision to go live, and the next workflow you want automated.",
+    get: "The agent in daily use, monitored and improved, with regular reports on what it did, then the next workflow.",
   },
 ];
 
@@ -241,13 +263,42 @@ export default function AiAutomationPage() {
               <div key={w.title} className="bg-background p-8 md:p-10 flex flex-col gap-4">
                 <h3 className="text-xl md:text-2xl font-light text-foreground leading-snug">{w.title}</h3>
                 <p className="text-base text-foreground/70 leading-relaxed">{w.body}</p>
+                {w.href ? <TextLink href={w.href}>{w.linkLabel}</TextLink> : null}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <ProcessSection />
+      {/* What a pilot looks like */}
+      <section className="bg-background px-6 md:px-12 lg:px-20 py-20 md:py-28 border-t border-border">
+        <div className="max-w-7xl mx-auto">
+          <Eyebrow>How a pilot works</Eyebrow>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight text-foreground max-w-3xl mb-6 text-balance">
+            One workflow first, then the next
+          </h2>
+          <p className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-3xl mb-14 md:mb-20">
+            Every project starts small, on one workflow, so you see real results before you commit to more. This is
+            what each step asks of you and what you get back.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+            {pilot.map((p) => (
+              <div key={p.step} className="bg-background p-8 md:p-10 flex flex-col gap-5">
+                <span className="text-sm text-muted-foreground tabular-nums">{p.step}</span>
+                <h3 className="text-2xl md:text-3xl font-light text-foreground">{p.title}</h3>
+                <div>
+                  <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">You give us</p>
+                  <p className="text-base text-foreground/70 leading-relaxed">{p.give}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">You get</p>
+                  <p className="text-base text-foreground leading-relaxed">{p.get}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Related services */}
       <section className="bg-background px-6 md:px-12 lg:px-20 pb-20 md:pb-28">

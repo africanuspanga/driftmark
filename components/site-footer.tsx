@@ -27,6 +27,9 @@ export function SiteFooter() {
                 {s.title}
               </a>
             ))}
+            <a href="/whatsapp-chatbot" className="text-sm text-background/80 hover:text-background transition-colors">
+              WhatsApp Chatbots
+            </a>
           </div>
           <div className="flex flex-col gap-3">
             <h3 className="text-xs font-medium tracking-widest uppercase text-background/40 mb-2">Software</h3>

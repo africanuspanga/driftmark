@@ -150,8 +150,7 @@ export const services: Service[] = [
     ],
     product: {
       name: "Atlas and Shopi",
-      href: "https://atlasgo.co.tz",
-      external: true,
+      href: "/school-management-system",
       body: "Our own products, Atlas (school management) and Shopi (shop-in-a-link for social sellers), are built and run by the same team that builds client software.",
     },
     faqs: [
@@ -308,9 +307,8 @@ export const products: Product[] = [
     number: "/0.4",
     description:
       "School management software for Tanzanian schools: fees and arrears, attendance, marks and report cards, and SMS to parents, in one place.",
-    href: "https://atlasgo.co.tz",
-    external: true,
-    linkLabel: "Visit Atlas",
+    href: "/school-management-system",
+    linkLabel: "Learn about Atlas",
   },
   {
     name: "CV Chap Chap",

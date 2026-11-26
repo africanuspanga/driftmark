@@ -30,6 +30,18 @@ const searchIndex: SearchItem[] = [
     keywords: "ai agents agentic automation workflows whatsapp invoices reports tanzania",
   },
   {
+    title: "WhatsApp Chatbot",
+    category: "Page",
+    href: "/whatsapp-chatbot",
+    keywords: "whatsapp business api chatbot ai chat bot customers orders bookings kiswahili",
+  },
+  {
+    title: "Atlas School Management System",
+    category: "Software",
+    href: "/school-management-system",
+    keywords: "school management system student information fees attendance report cards necta sms parents",
+  },
+  {
     title: "About Us",
     category: "Section",
     href: "/#about",

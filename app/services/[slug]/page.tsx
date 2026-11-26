@@ -109,14 +109,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <h3 className="text-2xl md:text-3xl font-light mb-3">{service.product.name}</h3>
                 <p className="text-base text-background/70 leading-relaxed">{service.product.body}</p>
               </div>
-              {service.product.external ? (
+              {service.product.href !== service.href ? (
                 <a
                   href={service.product.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={service.product.external ? "_blank" : undefined}
+                  rel={service.product.external ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4 hover:text-background/70 shrink-0"
                 >
-                  Visit {service.product.name.split(" ")[0]}
+                  Learn about {service.product.name.split(" ")[0]}
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
               ) : null}
